@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bets By Boss</title>
+</head>
+<body>
+    {% for bet in bets %}
+        <h3>{{ bet.game_name }}</h3>
+        <p>
+            {{ bet.pub_date }}<br>
+            {{ bet.bet_amount }}% on {{ bet.bet_for }}<br>
+            {{ bet.comment }}
+        </p>
+    {% endfor %}
+</body>
+</html>
