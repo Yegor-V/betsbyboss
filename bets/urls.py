@@ -1,6 +1,11 @@
 from django.conf.urls import url
-from bets.views import bets_list
+from bets.views import free_bets, paid_bets, about, login, registration
 
 urlpatterns = [
-    url('^$', bets_list)
+    url('^about$', about),
+    url('^free_bets$', free_bets),
+    url('^paid_bets$', paid_bets),
+    url('^login$', login),
+    url('^registration$', registration),
+
 ]

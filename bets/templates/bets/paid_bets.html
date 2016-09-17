@@ -1,0 +1,30 @@
+{% extends 'bets/base.html' %}
+
+{% block content %}
+        {% for bet in bets %}
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-8">
+
+                        <h4>{{ bet.game_name }}<i><small>     {{ bet.pub_date }}</small></i></h4>
+                            <b>{{ bet.bet_amount }}% on {{ bet.bet_for }}</b><br>
+                            {{ bet.comment }}
+
+                    </div>
+                    <div class="col-xs-2"></div>
+
+                </div>
+
+                <div class="row">
+                    <br><br>
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+{% endblock %}
