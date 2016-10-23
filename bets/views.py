@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Bet
@@ -24,8 +23,3 @@ def login(request):
 
 def registration(request):
     return render(request, 'bets/registration.html', {})
-
-
-def index(request):
-    return HttpResponse('Slava loh')
-
