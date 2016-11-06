@@ -21,6 +21,11 @@ def about(request):
     return render(request, 'bets/about.html', {})
 
 
+class Articles(TemplateView):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'bets/articles.html', {})
+
+
 def login(request):
     return render(request, 'bets/login.html', {})
 

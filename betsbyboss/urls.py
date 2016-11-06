@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^vipbets$', VipBets.as_view(), name='vip-bets'),
     url(r'^login$', login, name='login'),
     url(r'^registration$', registration, name='registration'),
+    url(r'^articles', Articles.as_view(), name='articles'),
 ]

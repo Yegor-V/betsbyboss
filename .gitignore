@@ -92,3 +92,6 @@ ENV/
 
 .gitignore
 .idea/
+bets/migrations/0003_auto_20161106_0938.py
+bets/migrations/0004_auto_20161106_1006.py
+db.sqlite3
