@@ -1,16 +1,21 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse
+from django.views.generic import TemplateView
 
 from .models import Bet
 
 
-def free_bets(request):
-    bets = Bet.objects.order_by('-pub_date')[:5]
-    return render(request, 'bets/free_bets.html', {'bets': bets})
+class Bets(TemplateView):
+    def get(self, request, *args, **kwargs):
+        bets = Bet.objects.order_by('-date')[:5]
+        return render(request, 'bets/free_bets.html', {'bets': bets})
 
 
-def paid_bets(request):
-    bets = Bet.objects.order_by('-pub_date')[:10]
-    return render(request, 'bets/free_bets.html', {'bets': bets})
+class VipBets(TemplateView, LoginRequiredMixin):
+    def get(self, request, *args, **kwargs):
+        bets = Bet.objects.order_by('-date')[:10]
+        return render(request, 'bets/vip_bets.html', {'bets': bets})
 
 
 def about(request):
