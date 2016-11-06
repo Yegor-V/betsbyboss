@@ -2,14 +2,58 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <p>
-                    Registration page will be here
-                </p>
-            </div>
-            <div class="col-sm-2"></div>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h1>Bets by Boss Register</h1>
         </div>
+        <div class="col-lg-4"></div>
     </div>
+    <div class="row"><br></div>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            {{ error }}
+            <form method="post" action="{% url 'registration' %}" class="form-horizontal">
+                <fieldset>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username" class="col-lg-3">Username:</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-lg-3">Email:</label>
+                        <div class="col-lg-9">
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-lg-3">Password:</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_repeat" class="col-lg-3">Repeat password:</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="password_repeat" id="password_repeat" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-2 col-lg-offset-8">
+                            <button type="submit" value="Login" class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-4"></div>
+
+    </div>
+    </div>
+
 {% endblock %}
+
+{% block footer %}{% endblock %}
