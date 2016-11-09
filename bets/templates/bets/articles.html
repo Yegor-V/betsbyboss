@@ -2,14 +2,14 @@
 
 {% block content %}
     <div class="container">
+    {% for article in articles %}
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <p>
-                    Articles page will be here<br>
-                    It will be like a blog with useful tips about making bets.
-                </p>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.text }}</p>
             </div>
         </div>
+    {% endfor %}
     </div>
 {% endblock %}
 
