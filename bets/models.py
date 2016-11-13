@@ -24,7 +24,7 @@ class Owner(User):
 
 class BBBUser(User):
     key_to_private = models.CharField(max_length=100, default=None)
-    key_expires = models.DateTimeField()
+    key_expires = models.DateTimeField(null=True, blank=True)
 
     @property
     def has_key(self):
