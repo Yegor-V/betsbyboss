@@ -31,6 +31,10 @@ class Articles(ListView):
     template_name = 'bets/articles.html'
     model = Article
     context_object_name = 'articles'
+    paginate_by = 1
+
+    def get_queryset(self):
+        return Article.objects.all().order_by('-date')
 
 
 def user_login(request):
