@@ -1,18 +1,47 @@
 {% extends 'bets/base.html' %}
 {% load static %}
 
+{% block navbar %}
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'about' %}"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'about' %}">About<span class="sr-only">(current)</span></a></li>
+                    <li><a href="{% url 'analytics' %}">Analytics</a></li>
+                    <li><a href="{% url 'articles' %}">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-2">
-                <img src="{% static 'bets/logo.jpg' %}">
+                <img src="{% static 'bets/images/logo.jpg' %}">
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-6">
                 <br>
                 <br>
-                <h1>Bets by Boss<br><small><i>build on self success</i></small></h1>
+                <h1>Bets by Boss<br>
+                    <small><i>build on self success</i></small>
+                </h1>
             </div>
         </div>
         <div class="row">
@@ -21,19 +50,19 @@
                 <h4><i>FAQ</i></h4>
                 <p>
                     <b><i> - How can I get access to "Paid Bets" section?</i></b><br>
-                     - You should buy subscription.
+                    - You should buy subscription.
                 </p>
                 <p>
                     <b><i> - Where can I make a bet?</i></b><br>
-                     - You can make it on <a href="http://egb.com">egb.com</a>.
+                    - You can make it on <a href="http://egb.com">egb.com</a>.
                 </p>
                 <p>
                     <b><i> - What is your win rate?</i></b><br>
-                     - It differs from day to day but on a distance it is ~65%.
+                    - It differs from day to day but on a distance it is ~65%.
                 </p>
                 <p>
                     <b><i> - Are you interested in other forms of collaboration?</i></b><br>
-                     - Yes, send your requests to <a href="mailto:betsbybigboss@gmail.com">betsbybigboss@gmail.com</a>.
+                    - Yes, send your requests to <a href="mailto:betsbybigboss@gmail.com">betsbybigboss@gmail.com</a>.
                 </p>
                 <p><br></p>
             </div>
