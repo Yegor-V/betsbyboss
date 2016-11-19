@@ -18,9 +18,13 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{% url 'about' %}">About<span class="sr-only">(current)</span></a></li>
-                    <li><a href="{% url 'analytics' %}">Analytics</a></li>
-                    <li><a href="{% url 'articles' %}">Articles</a></li>
+                    <li class="active">
+                        <a href="{% url 'about' %}">
+                            <img src="{% static 'bets/images/title.png' %}" style="max-height: 30px; margin-top: -15px;"><span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li><a href="{% url 'analytics' %}">Аналитика</a></li>
+                    <li><a href="{% url 'articles' %}">Статьи</a></li>
                 </ul>
             </div>
         </div>
