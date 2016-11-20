@@ -47,7 +47,12 @@
                         <div class="col-lg-4"></div>
                         <div class="col-lg-10 col-lg-offset-1">
                             <br>
-                            <p>{{ article.text }}</p>
+                            <p>
+                                {{ article.text_beginning }}
+                                <a href="{% url 'article-details' article.id %}">
+                                    <br>Показать полностью...
+                                </a>
+                            </p>
                         </div>
                         <div class="col-lg-4"></div>
                     </div>

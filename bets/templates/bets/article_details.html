@@ -25,7 +25,7 @@
                            <img src="{% static 'bets/images/title.png' %}" style="max-height: 30px; margin-top: -15px;">
                         </a>
                     </li>
-                    <li class="active"><a href="{% url 'analytics' %}">Аналитика<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="{% url 'analytics' %}">Аналитика</a></li>
                     <li><a href="{% url 'articles' %}">Статьи</a></li>
                 </ul>
             </div>
@@ -35,29 +35,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-1">
-                {% for a in analytics %}
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{ a.team_1 }} - {{ a.team_2 }}
-                            {{ a.game_time }}
-                            {{ a.text_beginning }}
-                            <a href="{% url 'analytics-details' a.id %}">
-                                <br>Показать полностью...
-                            </a>
-                        </div>
-                    </div>
-
-                {% endfor %}
-            </div>
-            <div class="col-lg-3">
-                <a href="https://ggbetpromo.com/l/5828a69a7fb3bcaa6e9f4057">
-                    <img src="{% static 'bets/images/vertical_banner_articles.jpg' %}">
-                </a>
-            </div>
-        </div>
-    </div>
+    <p>{{ article.title }}</p>
+    <p>{{ article.text }}</p>
 {% endblock %}

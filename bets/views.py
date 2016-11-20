@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from bets.models import Article, Analytics
 
 
@@ -16,3 +16,15 @@ class ArticlesView(ListView):
     model = Article
     context_object_name = 'articles'
     template_name = 'bets/articles.html'
+
+
+class AnalyticsDetails(DetailView):
+    model = Analytics
+    template_name = 'bets/analytics_details.html'
+    context_object_name = 'analytics'
+
+
+class ArticleDetails(DetailView):
+    model = Article
+    template_name = 'bets/article_details.html'
+    context_object_name = 'article'
