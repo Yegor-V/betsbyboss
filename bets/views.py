@@ -10,12 +10,14 @@ class AnalyticsView(ListView):
     template_name = 'bets/analytics.html'
     context_object_name = 'analytics'
     model = Analytics
+    paginate_by = 2
 
 
 class ArticlesView(ListView):
     model = Article
     context_object_name = 'articles'
     template_name = 'bets/articles.html'
+    paginate_by = 2
 
 
 class AnalyticsDetails(DetailView):

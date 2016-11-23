@@ -20,11 +20,13 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{% url 'about' %}">
-                            <img src="{% static 'bets/images/title.png' %}" style="max-height: 30px; margin-top: -15px;">
+                            <img src="{% static 'bets/images/title.png' %}"
+                                 style="max-height: 30px; margin-top: -15px;">
                         </a>
                     </li>
                     <li><a href="{% url 'analytics' %}">Аналитика</a></li>
-                    <li class="active"><a href="{% url 'articles' %}">Статьи<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="{% url 'articles' %}">Статьи<span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -63,6 +65,24 @@
                     <img src="{% static 'bets/images/vertical_banner_articles.jpg' %}">
                 </a>
             </div>
+        </div>
+        <div class="row">
+            {% if is_paginated %}
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="{% url 'articles' %}?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                        <span class="page-current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="{% url 'articles' %}?page={{ page_obj.next_page_number }}">next</a>
+                        {% endif %}
+                    </span>
+                </div>
+
+            {% endif %}
         </div>
     </div>
 {% endblock %}
