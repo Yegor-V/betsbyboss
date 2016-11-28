@@ -25,8 +25,8 @@
                            <img src="{% static 'bets/images/title.png' %}" style="max-height: 30px; margin-top: -15px;">
                         </a>
                     </li>
-                    <li class="active"><a href="{% url 'analytics' %}">Аналитика</a></li>
-                    <li><a href="{% url 'articles' %}">Статьи</a></li>
+                    <li><a href="{% url 'analytics' %}">Аналитика</a></li>
+                    <li class="active"><a href="{% url 'articles' %}">Статьи</a></li>
                 </ul>
             </div>
         </div>
@@ -35,6 +35,14 @@
 {% endblock %}
 
 {% block content %}
-    <p>{{ article.title }}</p>
-    <p>{{ article.text }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-md-10 col-lg-8">
+                <h1>{{ article.title }}</h1>
+                <p>{{ article.text }}</p>
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
 {% endblock %}
