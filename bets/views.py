@@ -30,3 +30,7 @@ class ArticleDetails(DetailView):
     model = Article
     template_name = 'bets/article_details.html'
     context_object_name = 'article'
+
+
+class BostonMajor(TemplateView):
+    template_name = 'bets/boston_major.html'
