@@ -22,7 +22,8 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{% url 'about' %}">
-                           <img src="{% static 'bets/images/title.png' %}" style="max-height: 30px; margin-top: -15px;">
+                            <img src="{% static 'bets/images/title.png' %}"
+                                 style="max-height: 30px; margin-top: -15px;">
                         </a>
                     </li>
                     <li class="active"><a href="{% url 'analytics' %}">Аналитика</a></li>
@@ -35,10 +36,19 @@
 {% endblock %}
 
 {% block content %}
-    <p>{{ object.team_1 }}</p>
-    <p>{{ object.team_2 }}</p>
-    <p>{{ object.tournament_name }}</p>
-    <p>{{ object.game_time }}</p>
-    <p>{{ object.is_live_bets }}</p>
-    <p>{{ object.text }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <img src="{% static 'bets/images/eg_vs_np.jpg' %}">
+                <h3>
+                    {{ object.team_1 }} vs {{ object.team_2 }} {{ object.tournament_name }}
+                    <small>{{ object.str_time }}</small>
+                </h3>
+                <p>{{ object.text }}</p>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
 {% endblock %}
