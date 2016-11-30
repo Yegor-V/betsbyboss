@@ -34,3 +34,7 @@ class ArticleDetails(DetailView):
 
 class BostonMajor(TemplateView):
     template_name = 'bets/boston_major.html'
+
+
+class CustomArticles(TemplateView):
+    template_name = 'bets/custom_articles.html'
