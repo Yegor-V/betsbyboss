@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^analytics/(?P<pk>[0-9]+)$', AnalyticsDetails.as_view(), name='analytics-details'),
     url(r'^articles/(?P<pk>[0-9]+)$', ArticleDetails.as_view(), name='article-details'),
     url(r'^articles/the-boston-major/?$', BostonMajor.as_view(), name='boston-major'),
+    url(r'^articles/the-boston-major-europe/?$', BostonMajorEurope.as_view(), name='boston-major-europe'),
 ]
