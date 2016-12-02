@@ -11,6 +11,7 @@ class AnalyticsView(ListView):
     context_object_name = 'analytics'
     model = Analytics
     paginate_by = 10
+    queryset = Analytics.objects.all().order_by('-game_time')
 
 
 class ArticlesView(ListView):
@@ -42,3 +43,8 @@ class CustomArticles(TemplateView):
 
 class BostonMajorEurope(TemplateView):
     template_name = 'bets/boston_major_europe.html'
+
+
+class BostonMajorUSA(TemplateView):
+    template_name = 'bets/boston_major_usa.html'
+

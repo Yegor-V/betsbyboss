@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^articles/(?P<pk>[0-9]+)$', ArticleDetails.as_view(), name='article-details'),
     url(r'^articles/the-boston-major/?$', BostonMajor.as_view(), name='boston-major'),
     url(r'^articles/the-boston-major-europe/?$', BostonMajorEurope.as_view(), name='boston-major-europe'),
+    url(r'^articles/the-boston-major-usa/?$', BostonMajorUSA.as_view(), name='boston-major-usa'),
+
 ]
