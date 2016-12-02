@@ -9,7 +9,7 @@ class Analytics(models.Model):
     game_time = models.DateTimeField()
     is_live_bets = models.BooleanField()
     text = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='bets/static/bets/images')
 
     def __str__(self):
         return '{} vs {}'.format(self.team_1, self.team_2)
@@ -26,6 +26,11 @@ class Analytics(models.Model):
         year = date_time.split('-')[0]
         time = date_time.split(' ')[1][0:5]
         return "{}/{}/{} {}".format(day, month, year, time)
+
+    @property
+    def crunch_image_path(self):
+        image_name = str(self.image).split('/')[-1]
+        return '/static/bets/images/' + image_name
 
 
 class Article(models.Model):

@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <img src="{% static 'bets/images/eg_vs_np.jpg' %}">
+                <img src="{{ object.crunch_image_path }}" class="img-fluid">
                 <h3>
                     {{ object.team_1 }} vs {{ object.team_2 }} {{ object.tournament_name }}<br>
                     <small>{{ object.str_time }}</small>
