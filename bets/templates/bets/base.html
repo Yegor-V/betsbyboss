@@ -10,6 +10,7 @@
     <link href="{% static 'bets/css/paper.css' %}" rel="stylesheet">
     <script src="{% static 'bets/js/jquery.min.js' %}"></script>
     <script src="{% static 'bets/js/bootstrap.min.js' %}"></script>
+    <link rel="icon" href="{% static 'bets/images/tab_icon.png' %}">
 </head>
 
 <body>
@@ -45,6 +46,7 @@
 {% endblock %}
 
 {% block footer %}
+    <footer class="footer">
     <div class="container-fluid panel-footer">
         <div class="row">
             <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
@@ -61,6 +63,7 @@
             <div class="hidden-xs hidden-sm col-md-0 col-lg-2"></div>
         </div>
     </div>
+    </footer>
 {% endblock %}
 
 </body>
