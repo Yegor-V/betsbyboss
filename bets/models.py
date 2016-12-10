@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from betsbyboss.settings import MEDIA_ROOT
 
 
 class Analytics(models.Model):
@@ -9,7 +10,7 @@ class Analytics(models.Model):
     game_time = models.DateTimeField()
     is_live_bets = models.BooleanField()
     text = models.TextField()
-    image = models.ImageField(upload_to='bets/static/bets/images')
+    image = models.ImageField(upload_to=MEDIA_ROOT)
 
     def __str__(self):
         return '{} vs {}'.format(self.team_1, self.team_2)
